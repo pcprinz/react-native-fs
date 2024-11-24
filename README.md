@@ -73,7 +73,7 @@ and [old][Old Architecture] [RN][React Native] architectures.
       thumbnails.
     - [copyAssetsVideoIOS()] &mdash; Copies a video from the assets-library
       to the specified destination.
-    - [copyFile()] &mdash; Copies a file to a new destination.
+    - [copyFile()] &mdash; Copies a file (or a folder with files - except on Windows) to a new destination.
     - [copyFileAssets()] &mdash; (Android only) Copies Android app's asset(s)
       to the specified destination.
     - [copyFileRes()] &mdash; (Android only) Copies specified resource to
@@ -96,7 +96,7 @@ and [old][Old Architecture] [RN][React Native] architectures.
     - [getFSInfo()] &mdash; Gets info on the free and total storage space
       on the device, and its external storage.
     - [mkdir()] &mdash; Creates folder(s) at the given path.
-    - [moveFile()] &mdash; Moves a file (or a folder with files) to a new location.
+    - [moveFile()] &mdash; Moves a file (or a folder with files - except on Windows) to a new location.
     - [pathForGroup()] &mdash; (iOS only) Returns the absolute path to
       the directory shared for all applications with the same security group
       identifier.
