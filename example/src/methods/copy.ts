@@ -93,8 +93,8 @@ export const copyTests: TestMethods = {
     }
   },
   "copyFile() should copy folders too [non Windows]": async () => {
-    if (Platform.OS === "windows")
-      return Result.notAvailable("ios", "macos", "android");
+    if (notPlatform("ios", "macos"))
+      return Result.notAvailable("ios", "macos");
 
     // TODO: It should be also tested and documented:
     // -  How does it behave if the target item exists? Does it throw or
@@ -117,10 +117,7 @@ export const copyTests: TestMethods = {
         // TODO: For platforms that allow to copy folders, we should do more
         // checks here, similar to moveFile() checks.
         // actually this is not a test at all it just checks if the function does not throw and just on ios and macos
-        //! the platform check should be done before the test and return Status.notAvailable() if the platform is not supported
-        return ["android-windows"].includes(Platform.OS)
-          ? Result.error()
-          : Result.success();
+        Result.success();
       } catch (e: any) {
         //! why?
         if (
