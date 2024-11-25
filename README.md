@@ -73,7 +73,7 @@ and [old][Old Architecture] [RN][React Native] architectures.
       thumbnails.
     - [copyAssetsVideoIOS()] &mdash; Copies a video from the assets-library
       to the specified destination.
-    - [copyFile()] &mdash; Copies a file (or a folder with files - except on Windows) to a new destination.
+    - [copyFile()] &mdash; Copies a file (or a folder with files - except on Android/Windows) to a new destination.
     - [copyFileAssets()] &mdash; (Android only) Copies Android app's asset(s)
       to the specified destination.
     - [copyFileRes()] &mdash; (Android only) Copies specified resource to
@@ -626,7 +626,7 @@ Copies a file to a new destination. Throws if called on a directory.
 already exists. On iOS an error will be thrown if the file already exists.
 &mdash; **beware**, this has not been verified yet.
 
-**BEWARE:** On Android [copyFile()] throws if called on a folder; on other
+**BEWARE:** On Android and Windows [copyFile()] throws if called on a folder; on other
 platforms it does not throw, but it has not been verified yet, if it actually
 copies a folder with all its content there.
 
@@ -1174,9 +1174,7 @@ in this library fork.
 ```ts
 function write(filepath: string, contents: string, position?: number, encoding?: EncodingT): Promise<void>;
 ```
-**VERIFIED:** Android, iOS, macOS, Windows \
-**BEWARE:** On Windows it seems to work differently from other platforms,
-throwing if attempting to write to a non-existing file.
+**VERIFIED:** Android, iOS, macOS, Windows 
 
 Writes content to a file at the given random access position.
 
